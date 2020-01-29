@@ -14,6 +14,10 @@ router.get('/', (req, res) =>
   .catch(err => console.log(err))
 );
 
+// ADD contact form
+router.get('/add', (req, res) => res.render('add'));
+
+
 // INSERT into contacts table
 /*
 router.get('/add', (req, res) => {
@@ -23,7 +27,6 @@ router.get('/add', (req, res) => {
     username: 'lijiaxin',
     email: 'li@email.com',
     age: 23,
-    avi: img,
     bio: 'yktv',
   };
 
@@ -31,7 +34,6 @@ router.get('/add', (req, res) => {
     username,
     email,
     age,
-    avi,
     bio
   } = data;
 
@@ -39,7 +41,6 @@ router.get('/add', (req, res) => {
       username,
       email,
       age,
-      avi,
       bio
     })
     .then(contact => res.redirect('/contacts'))

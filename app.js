@@ -11,16 +11,23 @@ db.authenticate()
 
 const app = express();
 
-// Handlebars middleware
+// Middleware
 app.engine('handlebars', exphbs({
-  defaultLayout: 'main'
+  defaultLayout: 'main',
+  extname: '.handlebars',
+  layoutsDir: path.join(__dirname, './views/layouts')
 }));
 app.set('view engine', 'handlebars');
 app.use(express.static(path.join(__dirname, 'public')));
-
-app.get('/', (req, res) => res.send('INDEX'));
+app.use(bodyParser.urlencoded({
+  extended: false
+}))
 
 // Routes
+app.get('/', (req, res) => res.render('index', {
+  layout: 'landing'
+}));
+
 app.use('/contacts', require('./routes/contacts'));
 
 const PORT = process.env.PORT || 5000

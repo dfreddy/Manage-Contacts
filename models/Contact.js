@@ -11,9 +11,6 @@ const Contact = db.define('contact', {
   age: {
     type: Sequelize.INTEGER
   },
-  avi: {
-    type: Sequelize.BLOB('tiny')
-  },
   bio: {
     type: Sequelize.STRING
   },
