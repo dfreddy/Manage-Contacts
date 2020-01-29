@@ -11,6 +11,13 @@ db.authenticate()
 
 const app = express();
 
+// Handlebars middleware
+app.engine('handlebars', exphbs({
+  defaultLayout: 'main'
+}));
+app.set('view engine', 'handlebars');
+app.use(express.static(path.join(__dirname, 'public')));
+
 app.get('/', (req, res) => res.send('INDEX'));
 
 // Routes

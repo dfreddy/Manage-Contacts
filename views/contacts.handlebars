@@ -1,0 +1,25 @@
+<section id="contacts" class="container">
+  <h1>All Contacts</h1>
+
+  {{#each contacts}}
+
+  <div class="contact">
+    <h3>{{username}}</h3>
+    <p>{{bio}}</p>
+    <ul>
+      <img src={{avi}} style='width: 200px; height: 200px'>
+      <li><a href="mailto:{{email}}" class="btn btn-reverse">Message</a></li>
+    </ul>
+    <div class="age">
+      <small>age: <span>{{age}}</span></small>
+    </div>
+    <div class="mail">
+      <small>email: <span>{{email}}</span></small>
+    </div>
+  </div>
+
+  {{else}}
+    <p>No contacts registered<p>
+
+  {{/each}}
+</section>
