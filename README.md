@@ -1,6 +1,6 @@
-# WeChat Contacts
+# Manage-Contacts
 
-App that lets you manage wechat contacts
+Simple app that lets you freely manage your contacts
 
 ### Tech Stack
 
